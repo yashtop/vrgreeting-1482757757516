@@ -1,53 +1,88 @@
 <!DOCTYPE html>
+<!-- By Ada Rose Edwards @lady_ada_king. -->
 <html>
-<head>
-	<title>Favorites Organizer powered by Cloudant</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<link rel="stylesheet" href="/style/style.css" />
-</head>
-<body>
-	<div class = "container">
-	<div class = "banner">
-		<img class="newappIcon" src="images/newapp-icon.png">
-		<p class = "appTitle">
-			Favorites Organizer powered by Cloudant
-		</p>
-	</div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>A-Frame 80s</title>
+    <meta name="description" content="Vaporwave aesthetic text By Ada Rose Edwards.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@lady_ada_king">
+    <meta name="twitter:title" content="VR Vaporwa(v|r)e">
+    <meta name="twitter:description" content="What is vaporwave? According to commenters in various music forums, it's 'chillwave for Marxists,' 'post-elevator music,' 'corporate smooth jazz Windows 95 pop,'">
+    <meta name="twitter:image" content="http://i.imgur.com/B84J9uG.jpg">
+    <meta property="og:image" content="https://raw.githubusercontent.com/ngokevin/kframe/master/components/text/examples/vaporwave/preview.jpg"></meta>
+    <script src="https://rawgit.com/aframevr/aframe/917c06889ee1f3f79b7b1bbd9eab9815f9512503/dist/aframe.min.js"></script>
+    <script src="../build.js"></script>
+    <script src="https://cdn.rawgit.com/AdaRoseEdwards/facetype-fonts-for-a-frame/master/Dawning-of-a-New-Day_Regular.js"></script>
+    <script src="https://cdn.rawgit.com/AdaRoseEdwards/facetype-fonts-for-a-frame/master/Exo%202%20Black_Regular.js"></script>
+    <script src="https://cdn.rawgit.com/AdaRoseEdwards/facetype-fonts-for-a-frame/master/Exo%202_Bold%20Italic.js"></script>
+  </head>
+  <body>
+    <a-scene inspector="url: https://aframe.io/aframe-inspector/dist/aframe-inspector.min.js">
+      <a-assets>
+    
+        <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
+        <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
+        <img id="sky" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" crossorigin="anonymous" />
+		<img id="picture1" src="Picture1.png" />
+		<img id="picture2" src="Picture2.png" />
+		<img id="picture3" src="Picture3.png" />
+		<img id="picture4" src="Picture4.png" />
+		<img id="picture5" src="Picture5.png" />
+      </a-assets>
 
 
-	<section>
-		<table id='notes' class='records' border='0' cellspacing='0' cellpadding='0'><tbody></tbody></table>
-	</section>
-	<footer>
-		<div>
-			<!-- <button class='detailBtn' onclick="toggleServiceInfo()" title='Service information'>
-				<img src='images/detail.png' alt='detail'/>
-			-->
-			<button class="addBtn" onclick="addItem()" title="add record">
-				<img src="images/add.png" alt="add">
-			</button>
-			<br>
-			<a class = "infoImg" onclick="toggleAppInfo()">Help</a>
-		</div>
-		<div id='appinfo' class = 'appinfo' style='display: none;'>
-						This application helps you organize your favorite files.</br>
-						Supports all file types, like Audio, Video, Photos, Text etc.</br>
-						Click on Add icon to create a new category for your files. Provide a title and description for the category in the text fields.</br>
-						To add a file to a given category, Click on 'Browse' button to select a file, and 'Upload' button to upload the file.
-						To modify a title or description, Edit the text and press Enter.</br>
-						You can add multiple files (of any type) to a category.</br>
-						Click on <span class = 'deleteBtn' alt='delete'></span> icon to delete the category.
-		</div>
-		<div id="loadingImage"></div>
-		<br><br><br><br><br>
-		<div id="errorDiv" class='errorMsg'></div>
-	</footer>
-	<script type="text/javascript" src="/scripts/util.js"></script>
-	<script type="text/javascript" src="/scripts/index.js"></script>
-	<div id="myImage"><div id="innerImg"></div></div>
-	<br><br><br>
-	</div>
-</body>
+  <!-- Textured plane parallel to ground. -->
+  <a-entity>
+   <a-image src="#picture1"  position="-1.28 2.2 -3.2">
+	<a-animation attribute="rotation"
+               dur="10000"
+               fill="forwards"
+               to="0 360 0"
+               repeat="indefinite"></a-animation>
+   </a-image>
+   <a-image src="#picture3"  position="0.2 3.5 -3.2">
+   <a-animation attribute="rotation"
+               dur="10000"
+               fill="forwards"
+               to="0 360 0"
+               repeat="indefinite"></a-animation>
+   </a-image>
+  <a-image src="#picture2"  position="-0.7 2.9 -2.5">
+  <a-animation attribute="rotation"
+               dur="10000"
+               fill="forwards"
+               to="0 360 0"
+               repeat="indefinite"></a-animation>
+  </a-image>
+  <a-image src="#picture4"  position="0.9 2.7 -2.5">
+  <a-animation attribute="rotation"
+               dur="10000"
+               fill="forwards"
+               to="0 360 0"
+               repeat="indefinite"></a-animation>
+  </a-image>
+ <a-image src="#picture5"  position="0 2 -2">
+ <a-animation attribute="rotation"
+               dur="10000"
+               fill="forwards"
+               to="0 360 0"
+               repeat="indefinite"></a-animation>
+ </a-image>
+
+ 
+</a-entity>
+	  
+     
+
+     
+
+     
+
+      <a-sky src="#sky" ></a-sky>
+    </a-scene>
+
+    
+  </body>
 </html>
