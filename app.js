@@ -4,6 +4,7 @@
 
 var express = require('express'),
     routes = require('./routes'),
+    routesIndex = require('./routes/index1'),
     user = require('./routes/user'),
     http = require('http'),
     path = require('path'),
@@ -86,7 +87,7 @@ function initDBConnection() {
 initDBConnection();
 
 app.get('/', routes.index);
-app.get('/index', routes.index1);
+app.get('/index', routesIndex.index1);
 function createResponseData(id, name, value, attachments) {
 
     var responseData = {
