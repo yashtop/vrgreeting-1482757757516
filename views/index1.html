@@ -64,7 +64,17 @@
 
       <a-sky src="#sky" radius="100"></a-sky>
     </a-scene>
+<audio id="myAudio">
+  <source src="images/audio.mp3" type="audio/mpeg">
+</audio>
+<script>
+var x = document.getElementById("myAudio"); 
 
+function playAudio() { 
+    x.play(); 
+} 
+setTimeout(function(){ playAudio(); }, 35000);
+</script>
 
   </body>
 </html>
