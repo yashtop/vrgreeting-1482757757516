@@ -32,6 +32,7 @@
 		<img id="picture4" src="images/Picture4.png" />
 		<img id="picture5" src="images/Picture5.png" />
 		<img id="picture6" src="images/Bar.png" />
+	      <audio id="music" src="images/audio.mp3" preload="auto">
 
       </a-assets>
 
@@ -71,22 +72,21 @@
  </a-image>
 
  </a-entity>
-    
+     <a-entity id="river" geometry="primitive: plane" 
+          position="-10 0 0" sound="src: #music; autoplay: false;"></a-entity>
 
       <a-sky src="#sky" radius="100"></a-sky>
     </a-scene>
 	
-	<audio id="myAudio">
-  <source src="https://vrgreeting.mybluemix.net/images/audio.mp3" type="audio/mpeg">
-</audio>
-<script>
-var x = document.getElementById("myAudio"); 
 
-function playAudio() { 
-    x.play(); 
-} 
-setTimeout(function(){ playAudio(); }, 30000);
-</script> 
+<script>
+setTimeout(function(){ 
+var entity = document.querySelector('[sound]');
+entity.components.sound.playSound();
+
+}, 30000);
+
+</script>  
 
 
   </body>
