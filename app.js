@@ -85,9 +85,71 @@ function initDBConnection() {
 }
 
 initDBConnection();
+var responseData = {
+   "Name":"XXX",
+   "Designation":"XXX",
+   "Joining Date":"XXX",
+   "Enterprize ID":"XXX",
+   "Employee Number":"XXX",
+   "Project":{
+      "Project Name":"XXX",
+      "Project Decription":"XXX",
+      "Project Location":"XXX",
+      "Project DU Name":"XXX",
+      "Project DU Lead Name":"XXX",
+      "Project POC":"XXX",
+      "Project Contact Number":"XXX",
 
+   },
+   "TaskList":[
+      {
+         "task":"XXX",
+         "status":"pending"
+      },
+      {
+         "task":"XXX",
+         "status":"pending"
+      },
+      {
+         "task":"XXX",
+         "status":"completed"
+      }
+   ],
+   "Trainings":{
+      "Mandatory":[
+         "Trianing1URL",
+         "Training2URL",
+         "Training3URL"
+      ],
+      "Project Specific Trainings":[
+         "Trianing1URL",
+         "Training2URL",
+         "Training3URL"
+      ]
+   }
+}
+var locationData = {
+   "Library":{
+      "Location Detail":"XXX",
+      "Location360ImageUrl":"XXX"
+   },
+   "Cafeteria":{
+      "Location Detail":"XXX",
+      "Location360ImageUrl":"XXX"
+   },
+   "ProjectBay":{
+      "Location Detail":"XXX",
+      "Location360ImageUrl":"XXX"
+   }
+}
 app.get('/', routes.index);
 app.get('/index', routesIndex.index1);
+app.get('/getempdata', function(req, res) {
+  res.json(responseData);
+});
+app.get('/getlocationdata', function(req, res) {
+  res.json(locationData);
+});
 function createResponseData(id, name, value, attachments) {
 
     var responseData = {
