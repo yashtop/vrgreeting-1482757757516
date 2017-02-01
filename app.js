@@ -164,6 +164,24 @@ app.get('/getlocationdata', function(req, res) {
 app.get('/getempsapdata/:sapID', function(req, res) {
   res.json(getEmpDataSAP(req.params.sapID));
 });
+app.post('/insertempdata', function(request, response) {
+    var data = request.body.date;
+    if (id === undefined) {
+        // Generated random id
+        id = '';
+    }
+
+    db.insert(data, id, function(err, doc) {
+        if (err) {
+            console.log(err);
+            response.sendStatus(500);
+        } else
+            response.sendStatus(200);
+        response.end();
+    });
+   
+
+});
 function createResponseData(id, name, value, attachments) {
 
     var responseData = {
