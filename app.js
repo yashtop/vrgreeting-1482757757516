@@ -167,7 +167,7 @@ app.get('/getempsapdata/:sapID', function(req, res) {
 app.post('/insertempdata', function(request, response) {
     var data = request.body.data;
     var id = Date.now();
-    db.insert(data, id, function(err, doc) {
+    db.insert({"data":data}, id, function(err, doc) {
         if (err) {
             console.log(err);
             response.sendStatus(500);
