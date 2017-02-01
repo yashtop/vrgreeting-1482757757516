@@ -142,6 +142,17 @@ var locationData = {
       "Location360ImageUrl":"XXX"
    }
 }
+function getEmpDataSAP(sapID){
+	if(!sapID) return {"Error":"No Record Found(s)"}
+	var empSAPDate = [{"Image":"image1", "Name":"Pranav","Designation":"Lead","JoiningDate":"July, 30, 2016","EnterprizeID":"pranav.buradkar@accenture.com","EmployeeNumber":"11279507","Project":{"ProjectName":"Coke SFA","ProjectDescription":"Ria is cool","ProjectLocation":"Pune PDC5","ProjectDUName":"VE","ProjectDULeadName":"Dhanashree","ProjectPOC":"Vinod","ProjectContactNumber":"12345678","ProjectIcon":"prjIcon1",},"TaskList":[{"task":"Pranav Task 1","status":"false"},{"task":"Pranav Task 2","status":"false"},{"task":"Pranav Task 3","status":"true"}],"Trainings":[{"Name":" Virtual Experiece Learning Board","URL":"https://connectedlearning.accenture.com/learningboard/170218-augmented-virtual-and-mixed-reality"},{"Name":"Augmented Reality Basics","URL":"https://connectedlearning.accenture.com/learningboard/170218-augmented-virtual-and-mixed-reality"}]}];
+	for(i in empSAPDate){
+		if(empSAPDate[i].EmployeeNumber==sapID){
+			return empSAPDate[i];
+		}
+	}
+	return {"Error":"No Record Found(s)"}
+}
+
 app.get('/', routes.index);
 app.get('/index', routesIndex.index1);
 app.get('/getempdata', function(req, res) {
@@ -149,6 +160,9 @@ app.get('/getempdata', function(req, res) {
 });
 app.get('/getlocationdata', function(req, res) {
   res.json(locationData);
+});
+app.get('/getempsapdata/:sapID', function(req, res) {
+  res.json(getEmpDataSAP(req.params.sapID));
 });
 function createResponseData(id, name, value, attachments) {
 
