@@ -165,13 +165,9 @@ app.get('/getempsapdata/:sapID', function(req, res) {
   res.json(getEmpDataSAP(req.params.sapID));
 });
 app.post('/insertempdata', function(request, response) {
-    var data = request.body.date;
-    if (id === undefined) {
-        // Generated random id
-        id = '';
-    }
-
-    db.insert(data, id, function(err, doc) {
+    var data = request.body.data;
+    var id = Date.now();
+    db.insert({"data":"data","check":data}, id, function(err, doc) {
         if (err) {
             console.log(err);
             response.sendStatus(500);
