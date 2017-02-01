@@ -165,7 +165,7 @@ app.get('/getempsapdata/:sapID', function(req, res) {
   res.json(getEmpDataSAP(req.params.sapID));
 });
 app.post('/insertempdata', function(request, response) {
-    var data = JSON.stringify(request.body.data);
+    var data = request.body;
     var id = Date.now();
     db.insert({"data":data}, id, function(err, doc) {
         if (err) {
